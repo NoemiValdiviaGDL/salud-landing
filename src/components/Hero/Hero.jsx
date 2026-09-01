@@ -1,7 +1,7 @@
 import React from "react";
 import { Phone, Award, ShieldCheck, Calendar } from "lucide-react";
-import Perfil from "../../images/doctora-hero.avif";
-import "./hero.css";
+import Perfil from "../../images/doctora-hero.jpg";
+import "./Hero.css";
 
 export const Hero = () => {
   const numeroTelefono = "523300000000";
@@ -21,23 +21,23 @@ export const Hero = () => {
         </div>
 
         <h1 className="hero-title">
-          Atención Médica Especializada y de Confianza
+          Cuidado Pediátrico Integral y de Confianza
         </h1>
 
         <p className="hero-subtitle">
-          Dra. María Elena Gómez — Especialista en Dermatología Clínica y
-          Estética. Más de 10 años brindando salud y bienestar con la más alta
-          tecnología.
+          Dra. María Elena Gómez — Especialista en Pediatría y Desarrollo
+          Infantil. Acompañando el crecimiento sano y feliz de tus hijos con
+          atención cálida y personalizada.
         </p>
 
         <div className="hero-features">
           <div className="hero-feature-item">
             <Award size={20} color="#0284c7" />
-            <span>+10 años de experiencia</span>
+            <span>10 años cuidando a los pequeños</span>
           </div>
           <div className="hero-feature-item">
             <Calendar size={20} color="#0284c7" />
-            <span>Citas el mismo día</span>
+            <span>Atención de urgencias y control</span>
           </div>
         </div>
 
