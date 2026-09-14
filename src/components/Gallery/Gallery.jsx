@@ -1,11 +1,11 @@
 import React from "react";
 import "./Gallery.css";
-import GalleryPicture1 from "../../images/consultorio1.jpg";
-import GalleryPicture2 from "../../images/consultorio2.jpg";
-import GalleryPicture3 from "../../images/consultorio3.jpg";
-import GalleryPicture4 from "../../images/consultorio4.jpg";
-import GalleryPicture5 from "../../images/consultorio5.jpg";
-import GalleryPicture6 from "../../images/consultorio6.jpg";
+import GalleryPicture1 from "../../images/consultorio1.avif";
+import GalleryPicture2 from "../../images/consultorio2.avif";
+import GalleryPicture3 from "../../images/consultorio8.avif";
+import GalleryPicture4 from "../../images/consultorio4.avif";
+import GalleryPicture5 from "../../images/consultorio5.avif";
+import GalleryPicture6 from "../../images/consultorio6.avif";
 
 export const Gallery = () => {
   const imagenesGaleria = [
@@ -17,7 +17,7 @@ export const Gallery = () => {
     {
       id: 2,
       src: GalleryPicture2,
-      titulo: "Atención Cálida y Sin Miedo",
+      titulo: "Atención Cálida",
     },
     {
       id: 3,
@@ -27,17 +27,17 @@ export const Gallery = () => {
     {
       id: 4,
       src: GalleryPicture4,
-      titulo: "Equipamiento de Crecimiento y Salud",
+      titulo: "Ambiente Seguro para Recién Nacidos",
     },
     {
       id: 5,
       src: GalleryPicture5,
-      titulo: "Equipamiento de Crecimiento y Salud",
+      titulo: "Monitoreo Nutricional y Crecimiento",
     },
     {
       id: 6,
       src: GalleryPicture6,
-      titulo: "Equipamiento de Crecimiento y Salud",
+      titulo: "Área de Exploración e Higiene Médica",
     },
   ];
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { CheckCircle2, GraduationCap, Award, Users } from "lucide-react";
-import DoctoraAbout from "../../images/doctora-1.jpg";
+import DoctoraAbout from "../../images/doctora-about-me.avif";
 import "./About.css";
 
 const About = () => {

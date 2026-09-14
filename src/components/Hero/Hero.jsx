@@ -1,10 +1,10 @@
 import React from "react";
 import { Phone, Award, ShieldCheck, Calendar } from "lucide-react";
-import Perfil from "../../images/doctora-hero.jpg";
+import Perfil from "../../images/doctora-hero.avif";
 import "./Hero.css";
 
 export const Hero = () => {
-  const numeroTelefono = "523300000000";
+  const numeroTelefono = "3327825329";
   const mensaje = encodeURIComponent(
     "Hola, me gustaría agendar una consulta médica.",
   );
