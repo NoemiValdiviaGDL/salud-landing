@@ -9,7 +9,7 @@ export const Contact = () => {
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
 
   return (
-    <section className="contact-section">
+    <section id="contacto" className="contact-section">
       <div className="contact-header">
         <span className="contact-tag">Ubicación y Citas</span>
         <h2 className="contact-title">Visítanos en Nuestro Consultorio</h2>
@@ -41,6 +41,15 @@ export const Contact = () => {
                 <h4>Horarios de Atención</h4>
                 <p>Lunes a Viernes: 9:00 AM – 7:00 PM</p>
                 <p>Sábados: 9:00 AM – 2:00 PM</p>
+              </div>
+            </div>
+            <div className="contact-info-card">
+              <div className="contact-icon-box">
+                <Mail size={24} color="#0284c7" />
+              </div>
+              <div className="contact-info-details">
+                <h4>Email</h4>
+                <p>Dra_MariaRamos@gmail.com</p>
               </div>
             </div>
 

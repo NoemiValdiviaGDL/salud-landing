@@ -34,7 +34,7 @@ export const Services = () => {
   ];
 
   return (
-    <section className="services-section">
+    <section id="servicios" className="services-section">
       <div className="services-header">
         <span className="services-tag">Servicios Especilizados</span>
         <h2 className="services-title">

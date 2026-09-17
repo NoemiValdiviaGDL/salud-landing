@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Star, ExternalLink } from "lucide-react";
 import "./Testimonials.css";
 
@@ -18,7 +18,7 @@ export const Testimonials = () => {
   }, []);
 
   return (
-    <section className="testimonials-section">
+    <section id="testimonios" className="testimonials-section">
       <div className="testimonials-header">
         <span className="testimonials-tag">Google Reviews</span>
         <h2 className="testimonials-title">Lo que Opinan las Familias</h2>

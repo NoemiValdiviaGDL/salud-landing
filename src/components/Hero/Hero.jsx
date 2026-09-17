@@ -11,7 +11,7 @@ export const Hero = () => {
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
 
   return (
-    <section className="hero-container">
+    <section id="inicio" className="hero-container">
       <div className="hero-content">
         <div className="hero-badge">
           <ShieldCheck size={18} color="#0284c7" />
@@ -37,7 +37,9 @@ export const Hero = () => {
           </div>
           <div className="hero-feature-item">
             <Calendar size={20} color="#0284c7" />
-            <span>Atención de urgencias y control</span>
+            <span>
+              Atención de urgencias y control del crecimiento y desarrollo
+            </span>
           </div>
         </div>
 

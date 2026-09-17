@@ -1,4 +1,3 @@
-import React from "react";
 import "./Gallery.css";
 import GalleryPicture1 from "../../images/consultorio1.avif";
 import GalleryPicture2 from "../../images/consultorio2.avif";
@@ -42,7 +41,7 @@ export const Gallery = () => {
   ];
 
   return (
-    <section className="gallery-section">
+    <section id="galeria" className="gallery-section">
       <div className="gallery-header">
         <span className="gallery-tag">Instalaciones</span>
         <h2 className="gallery-title">Un Espacio Seguro para Tus Hijos</h2>

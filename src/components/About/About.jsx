@@ -1,11 +1,10 @@
-import React from "react";
-import { CheckCircle2, GraduationCap, Award, Users } from "lucide-react";
+import { CheckCircle2, GraduationCap } from "lucide-react";
 import DoctoraAbout from "../../images/doctora-about-me.avif";
 import "./About.css";
 
 const About = () => {
   return (
-    <section className="about-section">
+    <section id="sobre-mi" className="about-section">
       <div className="about-container">
         <div className="about-image-column">
           <div className="about-image-wrapper">
