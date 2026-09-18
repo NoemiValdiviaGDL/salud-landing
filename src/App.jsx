@@ -6,7 +6,16 @@ import Gallery from "./components/Gallery/Gallery.jsx";
 import Contact from "./components/Contact/Contact.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Footer from "./components/Footer/Footer.jsx";
+import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
+import ChatbotFloating from "./components/ChatBotFloating/ChatBotFloating.jsx";
+import { useState } from "react";
+
 function App() {
+  const [showPrivacy, setShowPrivacy] = useState(false);
+  if (showPrivacy) {
+    return <PrivacyPolicy onBack={() => setShowPrivacy(false)} />;
+  }
+
   return (
     <div>
       <Header />
@@ -16,7 +25,8 @@ function App() {
       <Gallery />
       <Testimonials />
       <Contact />
-      <Footer />
+      <Footer onOpenPrivacy={() => setShowPrivacy(true)} />
+      <ChatbotFloating />
     </div>
   );
 }

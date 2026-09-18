@@ -1,6 +1,6 @@
 import "./Footer.css";
 
-export const Footer = () => {
+export const Footer = ({ onOpenPrivacy }) => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -47,8 +47,16 @@ export const Footer = () => {
           © {currentYear} Dra. María Elena Ramos. Todos los derechos reservados.
         </p>
         <p>
-          <a href="#privacidad">Aviso de Privacidad</a> | Sitio optimizado para
-          consulta médica
+          <a
+            href="#privacidad"
+            onClick={(e) => {
+              e.preventDefault();
+              if (onOpenPrivacy) onOpenPrivacy();
+            }}
+          >
+            Aviso de Privacidad
+          </a>{" "}
+          | Sitio optimizado para consulta médica
         </p>
       </div>
     </footer>
