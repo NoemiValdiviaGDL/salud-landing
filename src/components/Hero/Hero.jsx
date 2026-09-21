@@ -4,12 +4,6 @@ import Perfil from "../../images/doctora-hero.avif";
 import "./Hero.css";
 
 export const Hero = () => {
-  const numeroTelefono = "3327825329";
-  const mensaje = encodeURIComponent(
-    "Hola, me gustaría agendar una consulta médica.",
-  );
-  const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
-
   return (
     <section id="inicio" className="hero-container">
       <div className="hero-content">
@@ -41,18 +35,6 @@ export const Hero = () => {
               Atención de urgencias y control del crecimiento y desarrollo
             </span>
           </div>
-        </div>
-
-        <div className="hero-cta">
-          <a
-            href={urlWhatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-whatsapp"
-          >
-            <Phone size={20} />
-            Agendar Cita por WhatsApp
-          </a>
         </div>
       </div>
 

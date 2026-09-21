@@ -7,7 +7,7 @@ import Contact from "./components/Contact/Contact.jsx";
 import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
-import ChatbotFloating from "./components/ChatBotFloating/ChatBotFloating.jsx";
+import WhatsAppFloating from "./components/WhatsAppFloating/WhastAppFloating.jsx";
 import { useState } from "react";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
       <Testimonials />
       <Contact />
       <Footer onOpenPrivacy={() => setShowPrivacy(true)} />
-      <ChatbotFloating />
+      <WhatsAppFloating />
     </div>
   );
 }
