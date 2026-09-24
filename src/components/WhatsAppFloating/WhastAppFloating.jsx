@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 import "./WhatsAppFloating.css";
 
 export const WhatsAppFloating = () => {
-  const numeroTelefono = "4427825329";
+  const numeroTelefono = "3327825329";
   const mensajePredeterminado = encodeURIComponent(
     "Hola Dra. Maria Elena, vi su página web y me gustaria consultar la disponibilidad para agendar una cita",
   );
