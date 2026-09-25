@@ -44,7 +44,8 @@ export const Footer = ({ onOpenPrivacy }) => {
       </div>
       <div className="footer-bottom">
         <p>
-          © {currentYear} Dra. María Elena Ramos. Todos los derechos reservados.
+          © {currentYear} Dra. María Elena Ramos • Médico Cirujano Céd. Prof.
+          12345678 • Pediatría Céd. Esp. 87654321
         </p>
         <p>
           <a

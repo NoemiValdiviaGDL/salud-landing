@@ -1,59 +1,103 @@
-import { Baby, Syringe, Stethoscope, Apple } from "lucide-react";
+import React from "react";
+import {
+  Baby,
+  Stethoscope,
+  Syringe,
+  HeartPulse,
+  Activity,
+  ArrowRight,
+} from "lucide-react";
 import "./Services.css";
 
 export const Services = () => {
+  const numeroTelefono = "523300000000"; // Número del consultorio
+
   const listaServicios = [
     {
       id: 1,
-      icon: <Baby size={26} color="#0284c7" />,
+      icon: <Baby size={28} />,
       title: "Control de Niño Sano",
       description:
-        "Monitoreo continuo del crecimiento, peso, talla, desarrollo psicomotor y prevención oportuna en cada etapa infantil.",
+        "Monitoreo mensual y semestral del crecimiento, peso, talla, nutrición y desarrollo psicomotor desde recién nacidos.",
+      whatsappMsg:
+        "Hola Dra. María Elena, me gustaría agendar una cita para Control de Niño Sano.",
     },
     {
       id: 2,
-      icon: <Syringe size={26} color="#0284c7" />,
-      title: "Esquema de Vacunación",
+      icon: <Stethoscope size={28} />,
+      title: "Consulta Pediátrica General",
       description:
-        "Aplicación y seguimiento de vacunas esenciales según la edad para garantizar una protección inmunológica completa.",
+        "Atención cálida y oportuna para padecimientos comunes: fiebre, infecciones respiratorias, alergias y malestares digestivos.",
+      whatsappMsg:
+        "Hola Dra. María Elena, necesito una consulta pediátrica para revisar a mi hijo/a.",
     },
     {
       id: 3,
-      icon: <Stethoscope size={26} color="#0284c7" />,
-      title: "Enfermedades Respiratorias",
+      icon: <Syringe size={28} />,
+      title: "Vacunación y Esquemas",
       description:
-        "Diagnóstico y tratamiento certero de bronquitis, asma, gripes, alergias y padecimientos infecciosos frecuentes.",
+        "Revisión, orientación y aplicación de vacunas esenciales según la edad para mantener a tus hijos protegidos.",
+      whatsappMsg:
+        "Hola Dra. María Elena, quisiera consultar información sobre el esquema de vacunación.",
     },
     {
       id: 4,
-      icon: <Apple size={26} color="#0284c7" />,
-      title: "Nutrición y Alimentación",
+      icon: <HeartPulse size={28} />,
+      title: "Crecimiento y Nutrición",
       description:
-        "Asesoría especializada en inicio de alimentación complementaria, prevención de anemia y hábitos saludables.",
+        "Evaluación del estado nutricional, prevención de anemia, asesoría en lactancia materna e alimentación complementaria.",
+      whatsappMsg:
+        "Hola Dra. María Elena, me interesa una consulta enfocada en nutrición y desarrollo.",
+    },
+    {
+      id: 5,
+      icon: <Activity size={28} />,
+      title: "Certificados Médicos Escolares",
+      description:
+        "Examen físico completo y expedición de certificados médicos oficiales para ingreso escolar o actividades deportivas.",
+      whatsappMsg:
+        "Hola Dra. María Elena, quisiera solicitar cita para un certificado médico escolar.",
     },
   ];
 
   return (
     <section id="servicios" className="services-section">
-      <div className="services-header">
-        <span className="services-tag">Servicios Especilizados</span>
-        <h2 className="services-title">
-          Atención Médica Pensada en los Más Pequeños
-        </h2>
-        <p className="services-subtitle">
-          Ofrecemos un cuidado integral desde recién nacidos hasta la
-          adolescencia con calidez y rigor científico.
-        </p>
-      </div>
+      <div className="services-container">
+        {/* Encabezado enfocado en valor */}
+        <div className="services-header">
+          <span className="services-tag">Cuidado Especializado</span>
+          <h2>Atención Pediátrica Integral para Cada Etapa</h2>
+          <p>
+            Servicios diseñados para cuidar la salud de tus hijos con paciencia,
+            empatía y el respaldo médico que necesitas.
+          </p>
+        </div>
 
-      <div className="services-grid">
-        {listaServicios.map((servicio) => (
-          <div key={servicio.id} className="service-card">
-            <div className="service-icon-box">{servicio.icon}</div>
-            <h3 className="service-card-title">{servicio.title}</h3>
-            <p className="service-card-description">{servicio.description}</p>
-          </div>
-        ))}
+        {/* Grilla de Servicios con CTAs directos */}
+        <div className="services-grid">
+          {listaServicios.map((servicio) => {
+            const urlWhatsappServicio = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(servicio.whatsappMsg)}`;
+
+            return (
+              <div key={servicio.id} className="service-card">
+                <div>
+                  <div className="service-icon-wrapper">{servicio.icon}</div>
+                  <h3>{servicio.title}</h3>
+                  <p>{servicio.description}</p>
+                </div>
+
+                <a
+                  href={urlWhatsappServicio}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="service-cta-link"
+                >
+                  Agendar este servicio <ArrowRight size={16} />
+                </a>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

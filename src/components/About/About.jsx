@@ -1,4 +1,4 @@
-import { CheckCircle2, GraduationCap } from "lucide-react";
+import { CheckCircle2, GraduationCap, ShieldCheck } from "lucide-react";
 import DoctoraAbout from "../../images/doctora-about-me.avif";
 import "./About.css";
 
@@ -26,6 +26,13 @@ const About = () => {
           </div>
         </div>
         <div className="about-content-column">
+          <div className="credentials-box">
+            <ShieldCheck size={20} color="#0284c7" />
+            <div>
+              <strong>Cédula Profesional:</strong> 12345678 |{" "}
+              <strong>Cédula Especialidad Pediátrica:</strong> 87654321
+            </div>
+          </div>
           <span className="about-section-tag">Sobre Mí</span>
 
           <h2 className="about-title">

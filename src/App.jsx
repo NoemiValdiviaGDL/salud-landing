@@ -9,6 +9,7 @@ import Footer from "./components/Footer/Footer.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 import WhatsAppFloating from "./components/WhatsAppFloating/WhastAppFloating.jsx";
 import { useState } from "react";
+import FAQ from "./components/FAQ/FAQ.jsx";
 
 function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -24,6 +25,7 @@ function App() {
       <Services />
       <Gallery />
       <Testimonials />
+      <FAQ />
       <Contact />
       <Footer onOpenPrivacy={() => setShowPrivacy(true)} />
       <WhatsAppFloating />
