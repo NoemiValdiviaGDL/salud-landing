@@ -9,6 +9,7 @@ export const Contact = () => {
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
   const urlGoogleMaps =
     "https://maps.google.com/?q=Hospital+Puerta+de+Hierro+Andares+Zapopan";
+  const correoContacto = "Dra_MariaRamos@gmail.com";
   return (
     <section id="contacto" className="contact-section">
       <div className="contact-header">
@@ -51,13 +52,16 @@ export const Contact = () => {
                 <p>Sábados: 9:00 AM – 2:00 PM</p>
               </div>
             </div>
+
             <div className="contact-info-card">
               <div className="contact-icon-box">
                 <Mail size={24} color="#0284c7" />
               </div>
               <div className="contact-info-details">
-                <h4>Email</h4>
-                <p>Dra_MariaRamos@gmail.com</p>
+                <a href={`mailto:${correoContacto}`} className="contact-link">
+                  <h4>Email</h4>
+                  <p>{correoContacto}</p>
+                </a>
               </div>
             </div>
 
