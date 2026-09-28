@@ -20,19 +20,14 @@ const About = () => {
               </div>
               <div>
                 <h4>Consejo Mexicano de Pediatria</h4>
-                <p>Pediatra Certificada</p>
+                <strong>Cédula Profesional:</strong> 12345678 |{" "}
+                <strong>Cédula Especialidad Pediátrica:</strong> 87654321
               </div>
             </div>
           </div>
         </div>
         <div className="about-content-column">
-          <div className="credentials-box">
-            <ShieldCheck size={20} color="#0284c7" />
-            <div>
-              <strong>Cédula Profesional:</strong> 12345678 |{" "}
-              <strong>Cédula Especialidad Pediátrica:</strong> 87654321
-            </div>
-          </div>
+          <div className="credentials-box"></div>
           <span className="about-section-tag">Sobre Mí</span>
 
           <h2 className="about-title">

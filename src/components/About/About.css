@@ -79,6 +79,9 @@
   font-size: 0.8rem;
   color: #64748b;
 }
+.about-floating-card strong {
+  color: #25282c;
+}
 
 .about-section-tag {
   color: #0284c7;

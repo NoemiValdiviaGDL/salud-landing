@@ -5,7 +5,7 @@ import "./FAQ.css";
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const numeroTelefono = "523300000000";
+  const numeroTelefono = "3327824329";
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(
     "Hola Dra. María Elena, tengo una consulta sobre las citas y disponibilidad.",
   )}`;
@@ -40,14 +40,12 @@ export const FAQ = () => {
   return (
     <section className="faq-section">
       <div className="faq-container">
-        {/* Encabezado */}
         <div className="faq-header">
           <span className="faq-tag">Resuelve tus dudas</span>
           <h2>Preguntas Frecuentes</h2>
           <p>Todo lo que necesitas saber antes de tu visita al consultorio.</p>
         </div>
 
-        {/* Acordeón de Preguntas */}
         <div className="faq-list">
           {preguntas.map((item, index) => {
             const isOpen = openIndex === index;
@@ -68,7 +66,6 @@ export const FAQ = () => {
           })}
         </div>
 
-        {/* Banner de Cierre (Último Empujón de Conversión) */}
         <div className="faq-cta-box">
           <h3>¿Tienes otra pregunta específica?</h3>
           <p>Escríbenos directamente y te responderemos a la brevedad.</p>

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Baby,
   Stethoscope,
@@ -10,7 +9,7 @@ import {
 import "./Services.css";
 
 export const Services = () => {
-  const numeroTelefono = "523300000000"; // Número del consultorio
+  const numeroTelefono = "3327825329"; // Número del consultorio
 
   const listaServicios = [
     {
@@ -63,7 +62,6 @@ export const Services = () => {
   return (
     <section id="servicios" className="services-section">
       <div className="services-container">
-        {/* Encabezado enfocado en valor */}
         <div className="services-header">
           <span className="services-tag">Cuidado Especializado</span>
           <h2>Atención Pediátrica Integral para Cada Etapa</h2>
@@ -73,7 +71,6 @@ export const Services = () => {
           </p>
         </div>
 
-        {/* Grilla de Servicios con CTAs directos */}
         <div className="services-grid">
           {listaServicios.map((servicio) => {
             const urlWhatsappServicio = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(servicio.whatsappMsg)}`;

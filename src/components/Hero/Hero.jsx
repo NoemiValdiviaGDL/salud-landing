@@ -12,7 +12,7 @@ import "./Hero.css";
 import PicHero from "../../images/doctora-hero.avif";
 
 export const Hero = () => {
-  const numeroTelefono = "523300000000"; // Reemplazar con el número real
+  const numeroTelefono = "3327825329"; // Reemplazar con el número real
   const mensajeWhatsApp = encodeURIComponent(
     "Hola Dra. María Elena, me gustaría consultar la disponibilidad de horarios para agendar una cita pediátrica.",
   );
@@ -21,27 +21,20 @@ export const Hero = () => {
   return (
     <section id="inicio" className="hero-section">
       <div className="hero-container">
-        {/* Contenido Principal (Copywriting de Ventas) */}
         <div className="hero-content">
-          {/* Badge de Disponibilidad e Identidad */}
           <div className="hero-badge">
             <span className="hero-badge-dot"></span>
             Citas Disponibles esta Semana • Zapopan
           </div>
-
-          {/* Titular Promesa de Valor */}
           <h1>
             Cuidado Pediátrico Especializado <span>Sin Esperas ni Prisas</span>
           </h1>
-
-          {/* Subtítulo enfocado en tranquilidad para los papás */}
           <p className="hero-description">
             Atención médica integral, diagnósticos precisos y la calidez que tus
             hijos merecen. Acompañamos su crecimiento con la tranquilidad que
             buscas como mamá o papá.
           </p>
 
-          {/* Botones de Llamada a la Acción (CTAs) */}
           <div className="hero-actions">
             <a
               href={urlWhatsapp}
@@ -59,7 +52,6 @@ export const Hero = () => {
             </a>
           </div>
 
-          {/* Gatillos de Confianza Inmediata (Trust Badges) */}
           <div className="hero-trust-grid">
             <div className="trust-item">
               <span className="trust-number">100%</span>
@@ -76,7 +68,6 @@ export const Hero = () => {
           </div>
         </div>
 
-        {/* Fotografía o Ilustración Profesional */}
         <div className="hero-image-container">
           <div className="hero-image-wrapper">
             <img

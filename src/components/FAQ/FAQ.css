@@ -1,7 +1,3 @@
-/* ==========================================
-   ESTILOS FAQ: MOBILE FIRST
-   ========================================== */
-
 .faq-section {
   padding: 56px 16px;
   background-color: #f8fafc;
@@ -48,7 +44,6 @@
   margin: 0;
 }
 
-/* Acordeón de Preguntas */
 .faq-list {
   display: flex;
   flex-direction: column;
@@ -108,7 +103,6 @@
   line-height: 1.6;
 }
 
-/* Banner Final de Conversión */
 .faq-cta-box {
   margin-top: 40px;
   background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
@@ -148,8 +142,6 @@
 .faq-cta-btn:active {
   transform: scale(0.96);
 }
-
-/* DESKTOPS */
 @media (min-width: 768px) {
   .faq-section {
     padding: 80px 20px;
