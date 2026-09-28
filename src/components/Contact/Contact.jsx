@@ -7,7 +7,8 @@ export const Contact = () => {
     "Hola Dra. María Elena, vi su ubicación en la página web y me gustaría agendar una consulta.",
   );
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
-
+  const urlGoogleMaps =
+    "https://maps.google.com/?q=Hospital+Puerta+de+Hierro+Andares+Zapopan";
   return (
     <section id="contacto" className="contact-section">
       <div className="contact-header">
@@ -27,9 +28,16 @@ export const Contact = () => {
                 <MapPin size={24} color="#0284c7" />
               </div>
               <div className="contact-info-details">
-                <h4>Dirección</h4>
-                <p>Av. Empresarios 150, Piso 5, Consultorio 502</p>
-                <p>Puerta de Hierro, Zapopan, Jal.</p>
+                <a
+                  href={urlGoogleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-link"
+                >
+                  <h4>Dirección</h4>
+                  <p>Av. Empresarios 150, Piso 5, Consultorio 502</p>
+                  <p>Puerta de Hierro, Zapopan, Jal.</p>
+                </a>
               </div>
             </div>
 
@@ -58,9 +66,11 @@ export const Contact = () => {
                 <Phone size={24} color="#0284c7" />
               </div>
               <div className="contact-info-details">
-                <h4>Teléfonos de Contacto</h4>
-                <p>Citas: (33) 3000-0000</p>
-                <p>Urgencias: (33) 3000-0001</p>
+                <a href={`tel:${numeroTelefono}`} className="contact-link">
+                  <h4>Teléfonos de Contacto</h4>
+                  <p>Citas: (33) 27825329</p>
+                  <p>Urgencias: (33) 27825329</p>
+                </a>
               </div>
             </div>
           </div>

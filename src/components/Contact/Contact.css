@@ -122,6 +122,30 @@
   background-color: #1ebe5d;
   transform: translateY(-2px);
 }
+.contact-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+.contact-link h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  transition: color 0.2s ease;
+}
+
+.contact-link p {
+  font-size: 0.92rem;
+  color: #475569;
+  margin: 0;
+}
+
+.contact-link:hover p {
+  color: #0284c7;
+}
 
 .contact-map-wrapper {
   width: 100%;
