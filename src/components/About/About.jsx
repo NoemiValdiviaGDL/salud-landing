@@ -27,7 +27,6 @@ const About = () => {
           </div>
         </div>
         <div className="about-content-column">
-          <div className="credentials-box"></div>
           <span className="about-section-tag">Sobre Mí</span>
 
           <h2 className="about-title">
