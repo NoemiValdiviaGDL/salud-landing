@@ -5,7 +5,7 @@ import "./FAQ.css";
 export const FAQ = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
-  const numeroTelefono = "3327824329";
+  const numeroTelefono = "3327825329";
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(
     "Hola Dra. María Elena, tengo una consulta sobre las citas y disponibilidad.",
   )}`;
