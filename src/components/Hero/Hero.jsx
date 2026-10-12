@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import {
   MessageCircle,
   MapPin,
@@ -8,10 +8,12 @@ import {
   CalendarCheck,
 } from "lucide-react";
 
-import "./Hero.css";
 import PicHero from "../../images/doctora-hero.avif";
+import "./Hero.css";
+import BookingModal from "../BookingModal/BookingModal";
 
 export const Hero = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
   const numeroTelefono = "3327825329"; // Reemplazar con el número real
   const mensajeWhatsApp = encodeURIComponent(
     "Hola Dra. María Elena, me gustaría consultar la disponibilidad de horarios para agendar una cita pediátrica.",
@@ -36,22 +38,24 @@ export const Hero = () => {
           </p>
 
           <div className="hero-actions">
-            <a
-              href={urlWhatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary-whatsapp"
-            >
-              <MessageCircle size={22} fill="#ffffff" color="#25d366" />
-              Agendar Cita por WhatsApp
-            </a>
-
             <a href="#contacto" className="btn-secondary-location">
               <MapPin size={18} color="#0284c7" />
               Ver Ubicación
             </a>
           </div>
+          <button
+            className="btn-primary-location"
+            onClick={() => setIsBookingOpen(true)}
+            style={{ cursor: "pointer" }}
+          >
+            <CalendarCheck size={18} color="#0284c7" />
+            Agendar Cita por Calendario
+          </button>
 
+          <BookingModal
+            isOpen={isBookingOpen}
+            onClose={() => setIsBookingOpen(false)}
+          />
           <div className="hero-trust-grid">
             <div className="trust-item">
               <span className="trust-number">100%</span>

@@ -10,17 +10,20 @@ import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 import WhatsAppFloating from "./components/WhatsAppFloating/WhastAppFloating.jsx";
 import { useState } from "react";
 import FAQ from "./components/FAQ/FAQ.jsx";
+import BookingModal from "./components/BookingModal/BookingModal.jsx";
 
 function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   if (showPrivacy) {
     return <PrivacyPolicy onBack={() => setShowPrivacy(false)} />;
   }
 
   return (
     <div>
-      <Header />
-      <Hero />
+      <Header onOpenBooking={() => setIsBookingOpen(true)} />
+      <Hero onOpenBooking={() => setIsBookingOpen(true)} />
       <About />
       <Services />
       <Gallery />
@@ -29,6 +32,10 @@ function App() {
       <Contact />
       <Footer onOpenPrivacy={() => setShowPrivacy(true)} />
       <WhatsAppFloating />
+      <BookingModal
+        isOpen={isBookingOpen}
+        onClose={() => setIsBookingOpen(false)}
+      />
     </div>
   );
 }
