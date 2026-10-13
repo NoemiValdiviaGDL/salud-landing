@@ -110,40 +110,33 @@
 .header-nav-list a:hover {
   color: #0284c7;
 }
-/* Botón de Agendar Cita en el Header */
-.header-btn-booking {
+
+/* Estilos para el botón exclusivo del menú móvil */
+.header-mobile-booking-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   background-color: #0284c7;
   color: #ffffff;
   font-weight: 700;
   font-size: 0.9rem;
-  padding: 10px 18px;
+  padding: 12px 18px;
   border-radius: 12px;
   border: none;
   cursor: pointer;
+  width: 100%; /* Ocupa el ancho del menú móvil para mayor comodidad */
+  margin-top: 10px;
   transition:
     background-color 0.2s ease,
     transform 0.1s ease;
-  margin-top: 10px; /* En versión móvil */
 }
 
-.header-btn-booking:hover {
+.header-mobile-booking-btn:hover {
   background-color: #0369a1;
 }
 
-.header-btn-booking:active {
-  transform: scale(0.97);
-}
-
-@media (min-width: 768px) {
-  .header-btn-booking {
-    margin-top: 0;
-    margin-left: 12px;
-  }
-}
-
+/* Ocultar este elemento de la lista por defecto en pantallas de 768px o mayores (Desktop) */
 @media (min-width: 768px) {
   .header-container {
     padding: 14px 20px;
@@ -157,6 +150,9 @@
     display: none;
   }
 
+  .mobile-only-item {
+    display: none;
+  }
   .header-nav {
     position: static;
     display: flex;
@@ -175,5 +171,10 @@
 
   .header-nav-list a {
     font-size: 0.9rem;
+  }
+}
+@media (min-width: 992px) {
+  .header-nav-list .header-btn-booking {
+    display: none;
   }
 }

@@ -16,14 +16,17 @@ function App() {
   const [showPrivacy, setShowPrivacy] = useState(false);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
+  const handleOpenBooking = () => {
+    setIsBookingOpen(true);
+  };
   if (showPrivacy) {
     return <PrivacyPolicy onBack={() => setShowPrivacy(false)} />;
   }
 
   return (
     <div>
-      <Header onOpenBooking={() => setIsBookingOpen(true)} />
-      <Hero onOpenBooking={() => setIsBookingOpen(true)} />
+      <Header onOpenBooking={() => handleOpenBooking(true)} />
+      <Hero onOpenBooking={() => handleOpenBooking(true)} />
       <About />
       <Services />
       <Gallery />

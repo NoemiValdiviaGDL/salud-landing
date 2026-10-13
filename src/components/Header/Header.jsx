@@ -72,10 +72,15 @@ export const Header = ({ onOpenBooking }) => {
                 Contacto y Ubicación
               </a>
             </li>
-            <button className="header-btn-booking" onClick={handleBookingClick}>
-              <Calendar size={18} />
-              Agendar Cita
-            </button>
+            <li className="mobile-only-item">
+              <button
+                className="header-mobile-booking-btn"
+                onClick={handleBookingClick}
+              >
+                <Calendar size={18} />
+                Agendar Cita
+              </button>
+            </li>
           </ul>
         </nav>
       </div>
