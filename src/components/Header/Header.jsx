@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { HeartPulse, Menu, X, Calendar } from "lucide-react";
+import { HeartPulse, Menu, X } from "lucide-react";
 import "./Header.css";
 
-export const Header = ({ onOpenBooking }) => {
+export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -11,12 +11,6 @@ export const Header = ({ onOpenBooking }) => {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-  const handleBookingClick = () => {
-    if (onOpenBooking) {
-      onOpenBooking();
-    }
-    setIsMenuOpen(false); // Cierra el menú móvil al hacer clic
   };
 
   return (
@@ -71,15 +65,6 @@ export const Header = ({ onOpenBooking }) => {
               <a href="#contacto" onClick={closeMenu}>
                 Contacto y Ubicación
               </a>
-            </li>
-            <li className="mobile-only-item">
-              <button
-                className="header-mobile-booking-btn"
-                onClick={handleBookingClick}
-              >
-                <Calendar size={18} />
-                Agendar Cita
-              </button>
             </li>
           </ul>
         </nav>
