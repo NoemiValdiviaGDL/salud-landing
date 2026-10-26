@@ -8,7 +8,7 @@ import {
   CalendarCheck,
 } from "lucide-react";
 
-import "./Hero.css";
+import "./Hero/Hero.css";
 import PicHero from "../../images/doctora-hero.avif";
 
 export const Hero = () => {
