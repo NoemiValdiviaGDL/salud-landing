@@ -1,17 +1,8 @@
 import { useState } from "react";
-import {
-  MessageCircle,
-  MapPin,
-  ShieldCheck,
-  Star,
-  Users,
-  Calendar,
-} from "lucide-react";
-
-import "./Hero/Hero.css";
+import { MapPin, Calendar } from "lucide-react";
 import PicHero from "../../images/doctora-hero.avif";
-import "./Hero.css";
 import BookingModal from "../BookingModal/BookingModal";
+import "./Hero.css";
 
 export const Hero = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
