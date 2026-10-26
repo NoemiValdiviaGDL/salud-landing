@@ -8,10 +8,7 @@ import {
   Calendar,
 } from "lucide-react";
 
-<<<<<<< HEAD
 import "./Hero/Hero.css";
-=======
->>>>>>> 4104f357d241b72e3d23e9a621c27d8ec4c78d10
 import PicHero from "../../images/doctora-hero.avif";
 import "./Hero.css";
 import BookingModal from "../BookingModal/BookingModal";
