@@ -1,6 +1,6 @@
 import React from "react";
 import { MessageCircle } from "lucide-react";
-import "./WhatsAppFloating.css";
+import "./whats-app-floating.css";
 
 export const WhatsAppFloating = () => {
   const numeroTelefono = "3327825329";

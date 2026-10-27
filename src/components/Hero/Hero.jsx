@@ -1,16 +1,9 @@
 import { useState } from "react";
 import { MapPin, Calendar } from "lucide-react";
 import PicHero from "../../images/doctora-hero.avif";
-import BookingModal from "../BookingModal/BookingModal";
-import "./Hero.css";
+import "./hero.css";
 
 export const Hero = () => {
-  const [isBookingOpen, setIsBookingOpen] = useState(false);
-
-  const handleBookingClick = () => {
-    setIsBookingOpen(true);
-  };
-
   const numeroTelefono = "3327825329";
   const mensajeWhatsApp = encodeURIComponent(
     "Hola Dra. María Elena, me gustaría consultar la disponibilidad de horarios para agendar una cita pediátrica.",
@@ -40,16 +33,6 @@ export const Hero = () => {
               Ver Ubicación
             </a>
           </div>
-          <button className="hero-btn-booking" onClick={handleBookingClick}>
-            <Calendar size={18} />
-            Agendar Cita
-          </button>
-
-          <BookingModal
-            isOpen={isBookingOpen}
-            onClose={() => setIsBookingOpen(false)}
-          />
-
           <div className="hero-trust-grid">
             <div className="trust-item">
               <span className="trust-number">100%</span>

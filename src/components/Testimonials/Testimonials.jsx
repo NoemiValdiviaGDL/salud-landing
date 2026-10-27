@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Star, ExternalLink } from "lucide-react";
-import "./Testimonials.css";
+import "./testimonials.css";
 
 export const Testimonials = () => {
   const googleReviewUrl =

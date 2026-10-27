@@ -6,7 +6,7 @@ import {
   Activity,
   ArrowRight,
 } from "lucide-react";
-import "./Services.css";
+import "./services.css";
 
 export const Services = () => {
   const numeroTelefono = "3327825329"; // Número del consultorio

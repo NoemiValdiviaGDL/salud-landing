@@ -1,6 +1,6 @@
 import { CheckCircle2, GraduationCap, ShieldCheck } from "lucide-react";
 import DoctoraAbout from "../../images/doctora-about-me.avif";
-import "./About.css";
+import "./about.css";
 
 const About = () => {
   return (

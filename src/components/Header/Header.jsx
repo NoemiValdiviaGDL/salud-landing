@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HeartPulse, Menu, X } from "lucide-react";
-import "./Header.css";
+import "./header.css";
 
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

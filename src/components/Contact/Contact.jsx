@@ -1,5 +1,5 @@
 import { MapPin, Clock, Phone, MessageCircle, Mail } from "lucide-react";
-import "./Contact.css";
+import "./contact.css";
 
 export const Contact = () => {
   const numeroTelefono = "3327825329";

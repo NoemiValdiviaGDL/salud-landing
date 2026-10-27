@@ -1,4 +1,4 @@
-import "./Gallery.css";
+import "./gallery.css";
 import GalleryPicture1 from "../../images/consultorio1.avif";
 import GalleryPicture2 from "../../images/consultorio2.avif";
 import GalleryPicture3 from "../../images/consultorio8.avif";

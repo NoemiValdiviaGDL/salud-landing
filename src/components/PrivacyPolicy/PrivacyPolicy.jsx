@@ -1,5 +1,5 @@
 import { ArrowLeft, ShieldCheck } from "lucide-react";
-import "./PrivacyPolicy.css";
+import "./privacy-policy.css";
 
 export const PrivacyPolicy = ({ onBack }) => {
   return (
