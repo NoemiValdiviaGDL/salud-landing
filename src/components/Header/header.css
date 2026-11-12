@@ -1,25 +1,17 @@
 .header-site {
   position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
   z-index: 1000;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
-  box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s ease;
 }
 
 .header-container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 12px 16px;
+  padding: 0.9rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,18 +20,31 @@
 .header-logo-group {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.75rem;
   text-decoration: none;
 }
 
 .header-logo-icon {
-  background-color: #e0f2fe;
-  color: #0284c7;
-  padding: 8px;
+  width: 44px;
+  height: 44px;
   border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 138, 255, 0.1),
+    rgba(94, 223, 255, 0.2)
+  );
+  border: 1px solid rgba(26, 138, 255, 0.2);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.header-logo-group:hover .header-logo-icon {
+  transform: scale(1.05);
+  box-shadow: 0 0 16px rgba(94, 223, 255, 0.45);
 }
 
 .header-brand-text {
@@ -48,133 +53,85 @@
 }
 
 .header-brand-title {
-  font-size: 1.15rem;
+  font-size: 0.72rem;
   font-weight: 800;
-  color: #0f172a;
-  line-height: 1.1;
-  letter-spacing: -0.3px;
-  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--color-indigo);
 }
 
 .header-brand-subtitle {
-  font-size: 0.75rem;
-  color: #0284c7;
+  font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.5px;
-}
-.header-menu-btn {
-  background: none;
-  border: none;
-  color: #0f172a;
-  padding: 6px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.header-nav {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  display: none; /* Oculto por defecto */
-  flex-direction: column;
-  padding: 16px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
-}
-
-.header-nav.open {
-  display: flex;
+  color: var(--color-deep);
 }
 
 .header-nav-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
   display: flex;
-  flex-direction: column;
-  gap: 16px;
+  list-style: none;
+  gap: 1.8rem;
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav-list a {
+  position: relative;
   text-decoration: none;
-  color: #334155;
-  font-weight: 600;
+  color: var(--text-main);
+  font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.2s ease;
+  padding: 0.3rem 0;
+  transition: color 0.25s ease;
+}
+
+.header-nav-list a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-mint));
+  transition: width 0.3s ease;
+  border-radius: 2px;
 }
 
 .header-nav-list a:hover {
-  color: #0284c7;
+  color: var(--color-primary);
 }
 
-/* Estilos para el botón exclusivo del menú móvil */
-.header-mobile-booking-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background-color: #0284c7;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 0.9rem;
-  padding: 12px 18px;
-  border-radius: 12px;
+.header-nav-list a:hover::after {
+  width: 100%;
+}
+
+.header-menu-btn {
+  display: none;
+  background: none;
   border: none;
+  color: var(--color-deep);
   cursor: pointer;
-  width: 100%; /* Ocupa el ancho del menú móvil para mayor comodidad */
-  margin-top: 10px;
-  transition:
-    background-color 0.2s ease,
-    transform 0.1s ease;
 }
 
-.header-mobile-booking-btn:hover {
-  background-color: #0369a1;
-}
-
-/* Ocultar este elemento de la lista por defecto en pantallas de 768px o mayores (Desktop) */
-@media (min-width: 768px) {
-  .header-container {
-    padding: 14px 20px;
-  }
-
-  .header-brand-title {
-    font-size: 1.35rem;
-  }
-
+@media (max-width: 860px) {
   .header-menu-btn {
-    display: none;
-  }
-
-  .mobile-only-item {
-    display: none;
+    display: block;
   }
   .header-nav {
-    position: static;
-    display: flex;
-    width: auto;
-    background: transparent;
-    border: none;
-    padding: 0;
-    box-shadow: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid var(--border-light);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
   }
-
+  .header-nav.open {
+    max-height: 360px;
+  }
   .header-nav-list {
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
-  }
-
-  .header-nav-list a {
-    font-size: 0.9rem;
-  }
-}
-@media (min-width: 992px) {
-  .header-nav-list .header-btn-booking {
-    display: none;
+    flex-direction: column;
+    padding: 1.2rem 1.5rem;
+    gap: 1rem;
   }
 }

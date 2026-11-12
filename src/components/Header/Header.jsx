@@ -5,20 +5,15 @@ import "./header.css";
 export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   return (
     <header className="header-site">
       <div className="header-container">
         <a href="#inicio" className="header-logo-group" onClick={closeMenu}>
           <div className="header-logo-icon">
-            <HeartPulse size={26} color="#0284c7" />
+            <HeartPulse size={26} color="var(--color-primary)" />
           </div>
           <div className="header-brand-text">
             <span className="header-brand-title">PEDIATRÍA</span>

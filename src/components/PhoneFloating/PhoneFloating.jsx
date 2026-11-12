@@ -3,8 +3,7 @@ import { Phone } from "lucide-react";
 import "./phone-floating.css";
 
 export const PhoneFloating = () => {
-  // Reemplaza con el teléfono real de atención para llamadas directas
-  const numeroTelefono = "3300000000";
+  const numeroTelefono = "3327825329";
 
   return (
     <a
@@ -13,7 +12,7 @@ export const PhoneFloating = () => {
       aria-label="Llamar al consultorio"
       title="Llamar directamente"
     >
-      <Phone size={26} />
+      <Phone size={24} />
     </a>
   );
 };

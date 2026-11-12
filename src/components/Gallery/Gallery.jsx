@@ -8,16 +8,8 @@ import GalleryPicture6 from "../../images/consultorio6.avif";
 
 export const Gallery = () => {
   const imagenesGaleria = [
-    {
-      id: 1,
-      src: GalleryPicture1,
-      titulo: "Consultorio Pediátrico Amigable",
-    },
-    {
-      id: 2,
-      src: GalleryPicture2,
-      titulo: "Atención Cálida",
-    },
+    { id: 1, src: GalleryPicture1, titulo: "Consultorio Pediátrico Amigable" },
+    { id: 2, src: GalleryPicture2, titulo: "Atención Cálida" },
     {
       id: 3,
       src: GalleryPicture3,

@@ -1,41 +1,25 @@
-/* Botón Flotante de Llamada Telefónica */
 .phone-floating-btn {
   position: fixed;
-  bottom: 90px; /* Posicionado arriba del botón flotante de WhatsApp */
-  right: 20px;
-  width: 56px;
-  height: 56px;
-  background-color: #0284c7; /* Azul médico para contrastar con el verde de WhatsApp */
-  color: #ffffff;
+  bottom: 92px;
+  right: 24px;
+  z-index: 990;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
+  background: var(--gradient-clinical);
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.4);
-  z-index: 999;
+  box-shadow: 0 8px 22px rgba(46, 19, 191, 0.28);
+  border: 2px solid rgba(94, 223, 255, 0.6);
+  animation: pulseRing 3s infinite;
   transition:
-    transform 0.2s ease,
-    background-color 0.2s ease,
-    box-shadow 0.2s ease;
-  text-decoration: none;
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .phone-floating-btn:hover {
-  background-color: #0369a1;
   transform: scale(1.08);
-  box-shadow: 0 6px 18px rgba(2, 132, 199, 0.5);
-}
-
-.phone-floating-btn:active {
-  transform: scale(0.95);
-}
-
-/* Ajuste responsive para celulares */
-@media (max-width: 768px) {
-  .phone-floating-btn {
-    bottom: 85px;
-    right: 16px;
-    width: 52px;
-    height: 52px;
-  }
+  box-shadow: 0 12px 28px rgba(26, 138, 255, 0.45);
 }

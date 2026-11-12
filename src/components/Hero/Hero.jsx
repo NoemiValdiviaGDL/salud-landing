@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MapPin, Calendar } from "lucide-react";
 import PicHero from "../../images/doctora-hero.avif";
 import "./hero.css";
@@ -12,6 +11,7 @@ export const Hero = () => {
 
   return (
     <section id="inicio" className="hero-section">
+      <div className="hero-glow-orb" aria-hidden="true"></div>
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-badge">
@@ -28,11 +28,21 @@ export const Hero = () => {
           </p>
 
           <div className="hero-actions">
+            <a
+              href={urlWhatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary-shimmer"
+            >
+              <Calendar size={18} />
+              Agendar Cita
+            </a>
             <a href="#contacto" className="btn-secondary-location">
-              <MapPin size={18} color="#0284c7" />
+              <MapPin size={18} color="var(--color-primary)" />
               Ver Ubicación
             </a>
           </div>
+
           <div className="hero-trust-grid">
             <div className="trust-item">
               <span className="trust-number">100%</span>

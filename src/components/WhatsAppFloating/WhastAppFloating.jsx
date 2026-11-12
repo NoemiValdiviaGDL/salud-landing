@@ -5,20 +5,23 @@ import "./whats-app-floating.css";
 export const WhatsAppFloating = () => {
   const numeroTelefono = "3327825329";
   const mensajePredeterminado = encodeURIComponent(
-    "Hola Dra. Maria Elena, vi su página web y me gustaria consultar la disponibilidad para agendar una cita",
+    "Hola Dra. María Elena, vi su página web y me gustaría consultar la disponibilidad para agendar una cita.",
   );
 
-  const urlWhastsapp = `https://wa.me/${numeroTelefono}?text=${mensajePredeterminado}`;
+  const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensajePredeterminado}`;
+
   return (
     <a
-      href={urlWhastsapp}
-      targent="_blank"
-      rel="nooper noreferrer"
+      href={urlWhatsapp}
+      target="_blank"
+      rel="noopener noreferrer"
       className="whatsapp-floating-btn"
       aria-label="Contactar por WhatsApp"
+      title="Agendar cita por WhatsApp"
     >
-      <MessageCircle size={32} fill="#ffffff" color="#25d366" />
+      <MessageCircle size={30} color="#ffffff" />
     </a>
   );
 };
+
 export default WhatsAppFloating;

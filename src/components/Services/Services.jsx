@@ -9,7 +9,7 @@ import {
 import "./services.css";
 
 export const Services = () => {
-  const numeroTelefono = "3327825329"; // Número del consultorio
+  const numeroTelefono = "3327825329";
 
   const listaServicios = [
     {
@@ -44,7 +44,7 @@ export const Services = () => {
       icon: <HeartPulse size={28} />,
       title: "Crecimiento y Nutrición",
       description:
-        "Evaluación del estado nutricional, prevención de anemia, asesoría en lactancia materna e alimentación complementaria.",
+        "Evaluación del estado nutricional, prevención de anemia, asesoría en lactancia materna y alimentación complementaria.",
       whatsappMsg:
         "Hola Dra. María Elena, me interesa una consulta enfocada en nutrición y desarrollo.",
     },
@@ -73,7 +73,9 @@ export const Services = () => {
 
         <div className="services-grid">
           {listaServicios.map((servicio) => {
-            const urlWhatsappServicio = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(servicio.whatsappMsg)}`;
+            const urlWhatsappServicio = `https://wa.me/${numeroTelefono}?text=${encodeURIComponent(
+              servicio.whatsappMsg,
+            )}`;
 
             return (
               <div key={servicio.id} className="service-card">

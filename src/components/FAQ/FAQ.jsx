@@ -75,7 +75,7 @@ export const FAQ = () => {
             rel="noopener noreferrer"
             className="faq-cta-btn"
           >
-            <MessageCircle size={20} fill="#ffffff" color="#25d366" />
+            <MessageCircle size={20} />
             Preguntar por WhatsApp
           </a>
         </div>

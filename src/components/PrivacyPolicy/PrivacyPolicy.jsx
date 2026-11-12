@@ -11,15 +11,8 @@ export const PrivacyPolicy = ({ onBack }) => {
         </a>
 
         <div className="privacy-header">
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "10px",
-              marginBottom: "8px",
-            }}
-          >
-            <ShieldCheck size={28} color="#0284c7" />
+          <div className="privacy-title-row">
+            <ShieldCheck size={28} color="var(--color-primary)" />
             <h1 className="privacy-title">Aviso de Privacidad</h1>
           </div>
           <span className="privacy-date">

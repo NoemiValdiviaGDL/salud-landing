@@ -1,128 +1,91 @@
 .gallery-section {
-  padding: 50px 16px;
-  background-color: #ffffff;
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    sans-serif;
+  padding: 5rem 1.5rem;
+  background: var(--bg-soft);
 }
 
 .gallery-header {
   text-align: center;
-  max-width: 600px;
-  margin: 0 auto 32px auto;
+  max-width: 680px;
+  margin: 0 auto 3rem;
 }
 
 .gallery-tag {
-  color: #0284c7;
-  font-size: 0.8rem;
+  display: inline-block;
+  font-size: 0.82rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 1.2px;
-  display: block;
-  margin-bottom: 8px;
+  letter-spacing: 0.1em;
+  color: var(--color-indigo);
+  background: rgba(90, 110, 210, 0.12);
+  padding: 0.35rem 0.95rem;
+  border-radius: 999px;
+  margin-bottom: 0.8rem;
 }
 
 .gallery-title {
-  font-size: 1.75rem;
-  color: #0f172a;
-  font-weight: 700;
-  line-height: 1.25;
-  margin-bottom: 12px;
+  font-size: clamp(1.75rem, 3vw, 2.3rem);
+  color: var(--text-main);
+  margin: 0 0 0.8rem;
 }
 
 .gallery-subtitle {
-  font-size: 0.95rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
 }
 
 .gallery-grid {
-  display: flex;
-  gap: 16px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 16px;
-  -webkit-overflow-scrolling: touch;
-}
-
-.gallery-grid::-webkit-scrollbar {
-  display: none;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery-card {
-  flex: 0 0 82%;
-  scroll-snap-align: center;
   position: relative;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.06);
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-soft);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+.gallery-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--color-cyan);
+  box-shadow: 0 16px 34px rgba(26, 138, 255, 0.16);
 }
 
 .gallery-image {
   width: 100%;
-  height: 260px;
+  height: 240px;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-card:hover .gallery-image {
+  transform: scale(1.04);
 }
 
 .gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 12px 16px;
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    rgba(15, 23, 42, 0.85) 100%
-  );
-  color: #ffffff;
+  padding: 1rem 1.25rem;
+  background: #ffffff;
+  border-top: 2px solid transparent;
+  transition: border-color 0.3s ease;
 }
 
-.gallery-caption {
+.gallery-card:hover .gallery-caption {
+  border-top-color: var(--color-mint);
+}
+
+.gallery-caption h4 {
   margin: 0;
-  font-size: 0.95rem;
+  font-size: 0.98rem;
+  color: var(--color-deep);
   font-weight: 600;
-}
-
-@media (min-width: 768px) {
-  .gallery-section {
-    padding: 80px 20px;
-  }
-
-  .gallery-title {
-    font-size: 2.25rem;
-  }
-
-  .gallery-subtitle {
-    font-size: 1.05rem;
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    overflow-x: visible;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-bottom: 0;
-  }
-
-  .gallery-card {
-    flex: initial;
-    transition: transform 0.3s ease;
-  }
-
-  .gallery-card:hover {
-    transform: scale(1.02);
-  }
-
-  .gallery-image {
-    height: 280px;
-  }
 }

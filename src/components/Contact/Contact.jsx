@@ -10,6 +10,7 @@ export const Contact = () => {
   const urlGoogleMaps =
     "https://maps.google.com/?q=Hospital+Puerta+de+Hierro+Andares+Zapopan";
   const correoContacto = "Dra_MariaRamos@gmail.com";
+
   return (
     <section id="contacto" className="contact-section">
       <div className="contact-header">
@@ -26,7 +27,7 @@ export const Contact = () => {
           <div className="contact-info-list">
             <div className="contact-info-card">
               <div className="contact-icon-box">
-                <MapPin size={24} color="#0284c7" />
+                <MapPin size={24} color="var(--color-primary)" />
               </div>
               <div className="contact-info-details">
                 <a
@@ -44,7 +45,7 @@ export const Contact = () => {
 
             <div className="contact-info-card">
               <div className="contact-icon-box">
-                <Clock size={24} color="#0284c7" />
+                <Clock size={24} color="var(--color-primary)" />
               </div>
               <div className="contact-info-details">
                 <h4>Horarios de Atención</h4>
@@ -55,7 +56,7 @@ export const Contact = () => {
 
             <div className="contact-info-card">
               <div className="contact-icon-box">
-                <Mail size={24} color="#0284c7" />
+                <Mail size={24} color="var(--color-primary)" />
               </div>
               <div className="contact-info-details">
                 <a href={`mailto:${correoContacto}`} className="contact-link">
@@ -67,7 +68,7 @@ export const Contact = () => {
 
             <div className="contact-info-card">
               <div className="contact-icon-box">
-                <Phone size={24} color="#0284c7" />
+                <Phone size={24} color="var(--color-primary)" />
               </div>
               <div className="contact-info-details">
                 <a href={`tel:${numeroTelefono}`} className="contact-link">
@@ -78,6 +79,7 @@ export const Contact = () => {
               </div>
             </div>
           </div>
+
           <div className="contact-whatsapp-wrapper">
             <a
               href={urlWhatsapp}
@@ -90,6 +92,7 @@ export const Contact = () => {
             </a>
           </div>
         </div>
+
         <div className="contact-map-column">
           <div className="contact-map-wrapper">
             <iframe

@@ -21,3 +21,62 @@ body::-webkit-scrollbar {
   width: 0;
   height: 0;
 }
+:root {
+  /* Paleta Principal */
+  --color-primary: #1a8aff; /* Azul clínico vibrante */
+  --color-cyan: #5edfff; /* Azul cielo / destellos */
+  --color-indigo: #5a6ed2; /* Índigo sereno */
+  --color-mint: #19ffe3; /* Turquesa acento / micro-detalles */
+  --color-deep: #2e13bf; /* Azul profundo / autoridad */
+
+  /* Neutros y Fondos Clínicos */
+  --bg-page: #ffffff;
+  --bg-soft: #f6f9ff;
+  --bg-card: #ffffff;
+  --text-main: #111827;
+  --text-muted: #4b5563;
+  --border-light: rgba(90, 110, 210, 0.16);
+
+  /* Sombras y Destellos */
+  --shadow-soft: 0 10px 30px -10px rgba(46, 19, 191, 0.08);
+  --shadow-glow: 0 8px 25px rgba(26, 138, 255, 0.22);
+  --gradient-clinical: linear-gradient(135deg, #1a8aff 0%, #5a6ed2 100%);
+  --gradient-shimmer: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(94, 223, 255, 0.35) 50%,
+    transparent 70%
+  );
+}
+
+/* Animaciones globales elegantes */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseRing {
+  0% {
+    box-shadow: 0 0 0 0 rgba(25, 255, 227, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(25, 255, 227, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(25, 255, 227, 0);
+  }
+}
+
+@keyframes shimmerSweep {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 150%;
+  }
+}

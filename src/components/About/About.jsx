@@ -1,4 +1,4 @@
-import { CheckCircle2, GraduationCap, ShieldCheck } from "lucide-react";
+import { CheckCircle2, GraduationCap } from "lucide-react";
 import DoctoraAbout from "../../images/doctora-about-me.avif";
 import "./about.css";
 
@@ -10,22 +10,23 @@ const About = () => {
           <div className="about-image-wrapper">
             <img
               src={DoctoraAbout}
-              alt="Dra. María Elena Gómez"
+              alt="Dra. María Elena Ramos"
               className="about-image"
             />
 
             <div className="about-floating-card">
               <div className="icon-box">
-                <GraduationCap size={22} color="#0284c7" />
+                <GraduationCap size={22} color="var(--color-primary)" />
               </div>
               <div>
-                <h4>Consejo Mexicano de Pediatria</h4>
+                <h4>Consejo Mexicano de Pediatría</h4>
                 <strong>Cédula Profesional:</strong> 12345678 |{" "}
                 <strong>Cédula Especialidad Pediátrica:</strong> 87654321
               </div>
             </div>
           </div>
         </div>
+
         <div className="about-content-column">
           <span className="about-section-tag">Sobre Mí</span>
 
@@ -55,19 +56,19 @@ const About = () => {
 
           <ul className="about-credentials">
             <li className="about-credential-item">
-              <CheckCircle2 size={18} color="#0284c7" />
+              <CheckCircle2 size={18} color="var(--color-primary)" />
               <span>Médico Cirujano y Partero por la UdeG</span>
             </li>
             <li className="about-credential-item">
-              <CheckCircle2 size={18} color="#0284c7" />
+              <CheckCircle2 size={18} color="var(--color-primary)" />
               <span>Alta Especialidad en Pediatría Médica</span>
             </li>
             <li className="about-credential-item">
-              <CheckCircle2 size={18} color="#0284c7" />
+              <CheckCircle2 size={18} color="var(--color-primary)" />
               <span>Seguimiento de Crecimiento y Desarrollo</span>
             </li>
             <li className="about-credential-item">
-              <CheckCircle2 size={18} color="#0284c7" />
+              <CheckCircle2 size={18} color="var(--color-primary)" />
               <span>Esquema Completo de Vacunación</span>
             </li>
           </ul>
