@@ -1,7 +1,10 @@
+import { useState, useEffect } from "react";
 import { MapPin, Clock, Phone, MessageCircle, Mail } from "lucide-react";
 import "./contact.css";
 
 export const Contact = () => {
+  const [isMapLoaded, setIsMapLoaded] = useState(false);
+
   const numeroTelefono = "3327825329";
   const mensaje = encodeURIComponent(
     "Hola Dra. María Elena, vi su ubicación en la página web y me gustaría agendar una consulta.",
@@ -10,6 +13,14 @@ export const Contact = () => {
   const urlGoogleMaps =
     "https://maps.google.com/?q=Hospital+Puerta+de+Hierro+Andares+Zapopan";
   const correoContacto = "Dra_MariaRamos@gmail.com";
+
+  // Fallback de seguridad por si el evento onLoad del iframe se dispara antes de hidratar
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsMapLoaded(true);
+    }, 1800);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <section id="contacto" className="contact-section">
@@ -95,13 +106,18 @@ export const Contact = () => {
 
         <div className="contact-map-column">
           <div className="contact-map-wrapper">
+            {!isMapLoaded && (
+              <div className="contact-map-skeleton">
+                <MapPin size={32} color="var(--color-primary)" />
+                <span>Cargando mapa interactivo...</span>
+              </div>
+            )}
             <iframe
               title="Ubicación del consultorio pediátrico"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3732.164871922572!2d-103.41432102398418!3d20.703554098256377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8428aecc49c5950d%3A0x6b4f74f76df56ec7!2sPuerta%20de%20Hierro%2C%20Zapopan%2C%20Jal.!5e0!3m2!1ses-419!2smx!4v1700000000000!5m2!1ses-419!2smx"
-              className="contact-map-iframe"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=Av.+Empresarios+150,+Puerta+de+Hierro,+Zapopan,+Jalisco&output=embed"
+              className={`contact-map-iframe ${isMapLoaded ? "loaded" : ""}`}
+              allowFullScreen
+              onLoad={() => setIsMapLoaded(true)}
             ></iframe>
           </div>
         </div>
