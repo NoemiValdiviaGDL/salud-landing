@@ -8,6 +8,7 @@ import Testimonials from "./components/Testimonials/Testimonials.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import PrivacyPolicy from "./components/PrivacyPolicy/PrivacyPolicy.jsx";
 import WhatsAppFloating from "./components/WhatsAppFloating/WhastAppFloating.jsx";
+import Certifications from "./components/Certifications/Certifications.jsx";
 import { useState } from "react";
 import FAQ from "./components/FAQ/FAQ.jsx";
 import PhoneFloating from "./components/PhoneFloating/PhoneFloating.jsx";
@@ -24,6 +25,7 @@ function App() {
       <Header />
       <Hero />
       <About />
+      <Certifications />
       <Services />
       <Gallery />
       <Testimonials />

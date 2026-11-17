@@ -1,9 +1,18 @@
-import { useState, useEffect } from "react";
-import { MapPin, Clock, Phone, MessageCircle, Mail } from "lucide-react";
+import { useState, useEffect, useRef } from "react";
+import {
+  MapPin,
+  Clock,
+  Phone,
+  MessageCircle,
+  Mail,
+  ExternalLink,
+} from "lucide-react";
 import "./contact.css";
 
 export const Contact = () => {
+  const [shouldRenderMap, setShouldRenderMap] = useState(false);
   const [isMapLoaded, setIsMapLoaded] = useState(false);
+  const mapSectionRef = useRef(null);
 
   const numeroTelefono = "3327825329";
   const mensaje = encodeURIComponent(
@@ -11,19 +20,39 @@ export const Contact = () => {
   );
   const urlWhatsapp = `https://wa.me/${numeroTelefono}?text=${mensaje}`;
   const urlGoogleMaps =
-    "https://maps.google.com/?q=Hospital+Puerta+de+Hierro+Andares+Zapopan";
+    "https://www.google.com/maps/search/?api=1&query=Av.+Empresarios+150+Puerta+de+Hierro+Zapopan+Jalisco";
   const correoContacto = "Dra_MariaRamos@gmail.com";
 
-  // Fallback de seguridad por si el evento onLoad del iframe se dispara antes de hidratar
+  // Detecta cuando el usuario se acerca al mapa (350px antes) para montarlo fresco
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsMapLoaded(true);
-    }, 1800);
-    return () => clearTimeout(timer);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          setShouldRenderMap(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "350px" },
+    );
+
+    if (mapSectionRef.current) {
+      observer.observe(mapSectionRef.current);
+    }
+
+    return () => observer.disconnect();
   }, []);
 
+  // Fallback de seguridad una vez que el iframe empieza a montarse
+  useEffect(() => {
+    if (!shouldRenderMap) return;
+    const timer = setTimeout(() => {
+      setIsMapLoaded(true);
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [shouldRenderMap]);
+
   return (
-    <section id="contacto" className="contact-section">
+    <section id="contacto" className="contact-section" ref={mapSectionRef}>
       <div className="contact-header">
         <span className="contact-tag">Ubicación y Citas</span>
         <h2 className="contact-title">Visítanos en Nuestro Consultorio</h2>
@@ -109,16 +138,27 @@ export const Contact = () => {
             {!isMapLoaded && (
               <div className="contact-map-skeleton">
                 <MapPin size={32} color="var(--color-primary)" />
-                <span>Cargando mapa interactivo...</span>
+                <span>Cargando ubicación en mapa...</span>
+                <a
+                  href={urlGoogleMaps}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="contact-map-fallback-btn"
+                >
+                  Abrir directamente en Google Maps <ExternalLink size={14} />
+                </a>
               </div>
             )}
-            <iframe
-              title="Ubicación del consultorio pediátrico"
-              src="https://www.google.com/maps?q=Av.+Empresarios+150,+Puerta+de+Hierro,+Zapopan,+Jalisco&output=embed"
-              className={`contact-map-iframe ${isMapLoaded ? "loaded" : ""}`}
-              allowFullScreen
-              onLoad={() => setIsMapLoaded(true)}
-            ></iframe>
+
+            {shouldRenderMap && (
+              <iframe
+                title="Ubicación del consultorio pediátrico"
+                src="https://maps.google.com/maps?q=20.7088,-103.4136&hl=es&z=16&output=embed"
+                className={`contact-map-iframe ${isMapLoaded ? "loaded" : ""}`}
+                allowFullScreen
+                onLoad={() => setIsMapLoaded(true)}
+              ></iframe>
+            )}
           </div>
         </div>
       </div>
